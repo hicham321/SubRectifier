@@ -3,8 +3,10 @@ package subtitlesrectifier;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class sub {
@@ -52,10 +54,8 @@ public class sub {
 	}
 	
 	private void testsub() throws IOException{
-		String worksapce1="C:/Users/pharma/FFGFG.txt";
-		String worksapce2="C:/Users/Hicham/Desktop/ffff.txt";
-
-		File file = new File(worksapce2);
+		
+		File file = new File("C:/Users/pharma/FFGFG.txt");
 		
 		ReadFile(file);
 		
