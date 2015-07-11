@@ -47,8 +47,15 @@ public class sub {
 	private void rectify (){
 		
 		for(int i=0;i< this.wordsList.size();i++){
-			
+			if(IsInteger(this.wordsList.get(i))){
+				
+			}
 		}
+	}
+	
+	private boolean IsInteger (String s){
+		
+		return true;
 	}
 	
 	private void testsub() throws IOException{
