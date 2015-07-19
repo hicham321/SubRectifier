@@ -54,6 +54,26 @@ public class sub {
 	}
 	
 	private boolean IsInteger (String s){
+		if (s == null) {
+			return false;
+		}
+		int length = s.length();
+		if (length == 0) {
+			return false;
+		}
+		int i = 0;
+		if (s.charAt(0) == '-') {
+			if (length == 1) {
+				return false;
+			}
+			i = 1;
+		}
+		for (; i < length; i++) {
+			char c = s.charAt(i);
+			if (c <= '/' || c >= ':') {
+				return false;
+			}
+		}
 		
 		return true;
 	}
@@ -62,7 +82,7 @@ public class sub {
 		String worksapce1="C:/Users/pharma/FFGFG.txt";
 		String worksapce2="C:/Users/Hicham/Desktop/ffff.txt";
 
-		File file = new File(worksapce2);
+		File file = new File(worksapce1);
 		
 		ReadFile(file);
 		
