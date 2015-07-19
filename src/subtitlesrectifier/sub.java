@@ -6,11 +6,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class sub {
 	
-	ArrayList<String> wordsList=new ArrayList<>();
+	private ArrayList<String> wordsList=new ArrayList<>();
 	
+	private Scanner sc = new Scanner(System.in);
+	
+	private double timeRectifying ;
 	// Read subtitles File  
 	private void ReadFile(File subFile) throws IOException{
 		
@@ -43,6 +47,14 @@ public class sub {
 	
 	//locate the strings that you want to work on
 	//rectify the string.
+	
+	private void PrintToUser(){
+		
+		System.out.println("enter the seconds you want to add :");
+		
+		double time= this.sc.nextDouble();
+		
+	}
 	
 	private void rectify (){
 		
