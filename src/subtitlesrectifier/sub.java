@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.xml.bind.ParseConversionEvent;
+
 public class sub {
 	
 	private ArrayList<String> wordsList=new ArrayList<>();
@@ -15,6 +17,8 @@ public class sub {
 	private Scanner sc = new Scanner(System.in);
 	
 	private double timeRectifying ;
+	
+	private String operation;
 	// Read subtitles File  
 	private void ReadFile(File subFile) throws IOException{
 		
@@ -50,21 +54,56 @@ public class sub {
 	
 	private void PrintToUser(){
 		
-		System.out.println("enter the seconds you want to add :");
+		System.out.println("enter the seconds you want to add or substract :");
 		
 		double time= this.sc.nextDouble();
 		
+		this.timeRectifying= time;
+		System.out.println("Do you want to add or substract seconds :");
+		boolean entry =false;
+		
+		while(!entry){
+		System.out.println("Write either add or substract ");
+		
+		 operation = this.sc.nextLine();
+		
+		if(operation.equals("add")){
+			
+			
+			entry=true;
+		}
+		if(operation.equals("substract")){
+		
+			
+			entry=true;
+		}
+		else{
+			System.out.println("enter add or substarct");
+		}
+		}
+		
+		
 	}
 	
-	private void rectify (){
+	private void LocateAndRectify (){
 		
 		for(int i=0;i< this.wordsList.size();i++){
 			if(IsInteger(this.wordsList.get(i))){
 				
+				Rectify(wordsList.get(i+1));
 			}
 		}
 	}
-	
+	private double Rectify (String s){
+		
+		String TimeString=s.substring(6);
+		
+		double  TimeDouble= Double.parseDouble(TimeString);
+		
+		
+		return TimeDouble;
+		
+	}
 	private boolean IsInteger (String s){
 		if (s == null) {
 			return false;
