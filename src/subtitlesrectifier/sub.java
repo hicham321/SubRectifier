@@ -78,21 +78,44 @@ public class sub {
 			entry=true;
 		}
 		else{
-			System.out.println("enter add or substarct");
+			System.out.println("enter add or substaract");
 		}
 		}
 		
 		
 	}
 	
-	private void LocateAndRectify (){
+	private ArrayList<String> LocateAndRectify (){
 		
-		for(int i=0;i< this.wordsList.size();i++){
-			if(IsInteger(this.wordsList.get(i))){
+		ArrayList<String> list= new ArrayList<>();
+		
+		list=this.wordsList;
+		
+		for(int i=0;i< list.size()-3;i++){
+			if(IsInteger(list.get(i))){
 				
-				Rectify(wordsList.get(i+1));
+				double firstTime=Rectify(list.get(i+1));
+				double secondTime=Rectify(list.get(i+3));
+				
+				
+				if(this.operation.equals("add")){
+					
+					String modifiedTime1 = String.valueOf(firstTime+timeRectifying);
+					
+					String modifiedTime2 = String.valueOf(firstTime+timeRectifying);
+					
+					
+				}
+				if(this.operation.equals("substract")){
+					
+                    String modifiedTime1 = String.valueOf(firstTime-timeRectifying);
+					
+					String modifiedTime2 = String.valueOf(firstTime-timeRectifying);
+					
+				}
 			}
 		}
+		return list;
 	}
 	private double Rectify (String s){
 		
